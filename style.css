@@ -237,34 +237,21 @@ body{
 ========================= */
 
 .skin-image{
-    width:100%;
-    max-width:420px;
-    height:auto;
-
-    display:block;
-
-    object-fit:contain;
-
-    filter:drop-shadow(0 0 40px rgba(0,102,255,.35));
-
-    animation:float 4s ease-in-out infinite;
-}
-@keyframes float{
-
-    50%{
-        transform:translateY(-18px);
-    }
-
+    ...
 }
 
-.hero-image{
-    display:flex;
+.hero{
     justify-content:center;
-    align-items:center;
-
-    flex:1;
+    text-align:center;
 }
 
+.hero-content{
+    max-width:900px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
 /* =========================
    TITULOS
 ========================= */
