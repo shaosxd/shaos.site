@@ -236,34 +236,33 @@ body{
    SKIN
 ========================= */
 
-.skin-placeholder{
-    width:350px;
-    height:500px;
+.skin-image{
+    width:100%;
+    max-width:420px;
+    height:auto;
 
-    border-radius:25px;
+    display:block;
 
-    background:rgba(255,255,255,.04);
+    object-fit:contain;
 
-    border:1px solid rgba(255,255,255,.08);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-weight:700;
-
-    box-shadow:
-    0 0 80px rgba(0,102,255,.15);
+    filter:drop-shadow(0 0 40px rgba(0,102,255,.35));
 
     animation:float 4s ease-in-out infinite;
 }
-
 @keyframes float{
 
     50%{
         transform:translateY(-18px);
     }
 
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex:1;
 }
 
 /* =========================
