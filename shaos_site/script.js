@@ -1,1 +1,0 @@
-console.log('Shaos.site listo');
