@@ -129,7 +129,7 @@ body{
 
 .hero{
 
-    min-height:100vh;
+       min-height:calc(100vh - 80px);
 
     display:flex;
 
@@ -172,19 +172,12 @@ body{
 
     background:rgba(255,255,255,.04);
 }
-
 .hero h1{
-    font-size:8rem;
-    font-weight:900;
-    line-height:.9;
-
-    margin-bottom:15px;
-
-    background:linear-gradient(
-    90deg,
-    white,
-    #8BB7FF
-    );
+    font-size:clamp(5rem,10vw,10rem);
+   text-shadow:
+0 0 30px rgba(0,102,255,.4),
+0 0 60px rgba(138,43,226,.25);
+}
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -696,4 +689,49 @@ translateY(0);
     text-align:center;
     max-width:900px;
     margin:auto;
+}
+
+.hero-content{
+
+    animation:heroPop 1.2s ease forwards;
+}
+
+@keyframes heroPop{
+
+    0%{
+        opacity:0;
+        transform:translateY(40px) scale(.92);
+    }
+
+    70%{
+        transform:translateY(0) scale(1.03);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.hero-buttons{
+
+    opacity:0;
+
+    animation:
+    fadeButtons .8s ease forwards;
+
+    animation-delay:.8s;
+}
+
+@keyframes fadeButtons{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
