@@ -687,3 +687,9 @@ translateY(0);
     animation:
     float 4s ease-in-out infinite;
 }
+.solo-text{
+    justify-content:center;
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
