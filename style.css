@@ -681,3 +681,7 @@ translateY(0);
     max-width:900px;
     margin:auto;
 }
+
+*{
+    outline:1px solid red;
+}
