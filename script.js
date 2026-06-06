@@ -51,10 +51,8 @@ if(target === 1290000){
 counter.innerText = "1.29M+";
 
 }
-else if(target === 200000000){
-
-counter.innerText = "200M+";
-
+else if(target === 468000000){
+    counter.innerText = "468M+";
 }
 else if(target === 38000000){
 
