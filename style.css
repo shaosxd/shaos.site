@@ -1000,3 +1000,51 @@ translateY(0);
         transform:translateX(-50%);
     }
 }
+
+.viral-card{
+
+    width:320px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#111;
+
+    transition:.3s;
+}
+
+.viral-card img{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.viral-card:hover{
+
+    transform:scale(1.07);
+
+    box-shadow:
+    0 0 40px rgba(0,102,255,.25);
+}
+
+.viral-info{
+
+    padding:20px;
+}
+
+.viral-info h3{
+
+    font-size:2rem;
+}
+
+
