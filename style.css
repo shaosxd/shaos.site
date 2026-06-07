@@ -801,3 +801,136 @@ translateY(0);
 
     margin-bottom:20px;
 }
+
+/* --- ESTILOS DE LA SECCIÓN DE CONTACTO --- */
+
+.seccion-contacto {
+  display: flex;
+  flex-wrap: wrap; /* Para que sea responsivo en celulares */
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1000px; /* Ajusta según el ancho de tu web */
+  margin: 60px auto;
+  padding: 40px 20px;
+  color: #ffffff; /* Color de texto blanco */
+  background-color: transparent; /* Hereda el fondo de tu web */
+}
+
+/* --- COLUMNA IZQUIERDA --- */
+.contacto-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contacto-info h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.contacto-info p {
+  color: #a0a0a0;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.correo-destacado {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 10px;
+}
+
+.icono-red {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #2a2a2a; /* Fondo gris oscuro de los botones */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.icono-red:hover {
+  background-color: #444444;
+}
+
+/* --- COLUMNA DERECHA (FORMULARIO) --- */
+.contacto-formulario-wrapper {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contacto-formulario-wrapper h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.formulario {
+  background-color: #1a1a1a; /* Fondo del recuadro del formulario */
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.grupo-input {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grupo-input label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.grupo-input input,
+.grupo-input textarea {
+  background-color: #262626; /* Color de los inputs */
+  border: 1px solid #333333;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+  outline: none;
+  border-color: #666666;
+}
+
+.btn-enviar {
+  width: 100%;
+  background-color: #2e2e2e;
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #404040;
+}
+
+/* --- RESPONSIVE DESIGN (MÓVILES) --- */
+@media (max-width: 768px) {
+  .seccion-contacto {
+    flex-direction: column;
+  }
+}
