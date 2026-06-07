@@ -398,32 +398,73 @@
 
 <section class="seccion-contacto">
   
-  <div class="contacto-info">
-    <h2>ENVÍAME UN MENSAJE</h2>
-    <p>¿Te interesa trabajar conmigo? Escribime a <a href="shaoscontact@gmail.com" class="correo-destacado">shaoscontact@gmail.com</a> o dejá un mensaje a continuación. Te responderé lo antes posible.</p>
+<section id="contact" class="contact-section">
 
-  <div class="contacto-formulario-wrapper">
-    <h2>Contacto:</h2>
-    <form action="https://formspree.io/f/maqzeeew" method="POST" class="formulario">
-      
-      <div class="grupo-input">
-        <label for="marca">Nombre de la marca*</label>
-        <input type="text" id="marca" name="marca" placeholder="Tu marca aquí" required>
-      </div>
+    <div class="contact-wrapper">
 
-      <div class="grupo-input">
-        <label for="email">Email de contacto*</label>
-        <input type="email" id="email" name="email" placeholder="Email de contacto" required>
-      </div>
+        <div class="contact-header">
 
-      <div class="grupo-input">
-        <label for="mensaje">Tu mensaje*</label>
-        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame sobre tu visión..." required></textarea>
-      </div>
+            <span class="contact-tag">
+                CONTACTO
+            </span>
 
-      <button type="submit" class="btn-enviar">ENVIAR PROPUESTA</button>
-    </form>
-  </div>
+            <h2>
+                ¿Tenés una propuesta?
+            </h2>
+
+            <p>
+                Si representás una marca, servidor, empresa o proyecto,
+                completá el formulario y me pondré en contacto lo antes posible.
+            </p>
+
+        </div>
+
+        <form action="https://formsubmit.co/shaoscontact@gmail.com"
+              method="POST"
+              class="contact-form">
+
+            <input type="hidden" name="_subject" value="Nueva propuesta desde shaos.site">
+
+            <input type="hidden" name="_captcha" value="false">
+
+            <input type="hidden"
+                   name="_next"
+                   value="https://shaos.site">
+
+            <div class="input-group">
+                <label>Empresa o proyecto</label>
+                <input
+                    type="text"
+                    name="Empresa"
+                    placeholder="Nombre de la empresa"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label>Email de contacto</label>
+                <input
+                    type="email"
+                    name="Email"
+                    placeholder="ejemplo@empresa.com"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <label>Mensaje</label>
+                <textarea
+                    name="Mensaje"
+                    rows="6"
+                    placeholder="Contame sobre tu propuesta..."
+                    required></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit">
+                Enviar propuesta
+            </button>
+
+        </form>
+
+    </div>
 
 </section>
 
