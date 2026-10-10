@@ -1,509 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a19">
+  <title>SHAOS — Elegí un canal</title>
+  <meta name="description" content="Explorá los canales de Minecraft de Shaos: Shaoskrr, ShaosMC y ShaosXD. Encontrá el contacto específico de cada canal.">
+  <link rel="icon" type="image/png" href="assets/shaosxd.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SHAOS — Elegí un canal">
+  <meta property="og:description" content="Tres canales, tres formas de crear contenido. Elegí cuál querés contactar.">
+  <meta property="og:url" content="https://shaos.site/">
+  <meta property="og:image" content="https://shaos.site/assets/shaosxd.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-<title>SHAOS | Minecraft Creator</title>
-
-<meta name="title" content="SHAOS">
-<meta name="description" content="Creador de contenido de Minecraft con más de 1.29 millones de suscriptores y 468 millones de visualizaciones destacadas.">
-
-<link rel="icon" type="image/png" href="/assets/favicon.png">
-
-<meta property="og:title" content="SHAOS">
-<meta property="og:description" content="Creador de contenido de Minecraft con más de 1.29 millones de suscriptores.">
-<meta property="og:image" content="https://shaos.site/assets/preview.jpg">
-<meta property="og:url" content="https://shaos.site">
-<meta property="og:type" content="website">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SHAOS">
-<meta name="twitter:description" content="Creador de contenido de Minecraft con más de 1.29 millones de suscriptores.">
-<meta name="twitter:image" content="https://shaos.site/assets/preview.jpg">
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet">
-
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5P54LYRYN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z5P54LYRYN');
-</script>
-    
+  <!-- Conserva la propiedad de Google Analytics del sitio anterior. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5P54LYRYN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date());
+    gtag('config', 'G-Z5P54LYRYN');
+  </script>
 </head>
-
 <body>
+  <div class="scene" aria-hidden="true"></div>
+  <div class="scene-shade" aria-hidden="true"></div>
 
-    <!-- Fondo -->
-    <div class="background"></div>
-    <div class="particles"></div>
-
-    <!-- Navbar -->
-
-    <nav class="navbar">
-
-        <div class="logo">
-            SHAOS
+  <main class="home" aria-label="Seleccioná un canal de Shaos">
+    <div class="channel-grid">
+      <!-- 1: Shaoskrr -->
+      <article class="channel-card channel-card--krr" aria-labelledby="title-krr">
+        <div class="card-pixels" aria-hidden="true"></div>
+        <div class="avatar-box">
+          <img src="assets/shaoskrr.png" alt="Logo original de Shaoskrr" width="447" height="447" fetchpriority="high">
         </div>
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="#stats">Estadísticas</a>
-            </li>
-
-            <li>
-                <a href="#impact">Impacto</a>
-            </li>
-
-            <li>
-                <a href="#about">Sobre mí</a>
-            </li>
-
-            <li>
-                <a href="#contact">
-                    Contacto
-                </a>
-            </li>
-
-        </ul>
-
-        <a href="#contact" class="nav-button">
-            Trabajemos juntos
-        </a>
-
-    </nav>
-
-    <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="hero-content">
-
-        <div class="hero-badge">
-            🎮 CREADOR DE MINECRAFT
+        <div class="card-body">
+          <h2 id="title-krr" class="channel-name">Shaoskrr</h2>
+          <p class="subscribers"><span class="youtube-mark" aria-hidden="true"><svg viewBox="0 0 28 20"><rect x="0" y="0" width="28" height="20" rx="6" fill="currentColor"/><path d="M11.5 5.3 19.2 10l-7.7 4.7z" fill="#fff"/></svg></span><strong>1,8 millones</strong> <span>de suscriptores</span></p>
+          <span class="separator" aria-hidden="true"></span>
+          <p class="channel-description">Contenido más infantil</p>
+          <button type="button" class="contact-btn" data-contact="shaoskrr" aria-label="Ver contacto de Shaoskrr">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><rect x="2.6" y="5.2" width="18.8" height="13.8" rx="2.3" stroke="currentColor" stroke-width="1.8"/><path d="m3.6 7 8.4 6 8.4-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            CONTACTO
+            <svg class="button-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 12h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
+      </article>
 
-        <h1>SHAOS</h1>
-
-        <h2>
-            1.29 millones de suscriptores
-        </h2>
-
-        <p>
-            Contenido de Minecraft visto por millones de personas.
-            Especializado en Shorts virales, storytelling y entretenimiento.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#contact" class="primary-btn">
-                Trabajemos juntos
-            </a>
-
-            <a href="#stats" class="secondary-btn">
-                Ver estadísticas
-            </a>
-
+      <!-- 2: ShaosMC -->
+      <article class="channel-card channel-card--mc" aria-labelledby="title-mc">
+        <div class="card-pixels" aria-hidden="true"></div>
+        <div class="avatar-box">
+          <img src="assets/shaosmc.png" alt="Logo original de ShaosMC" width="447" height="447">
         </div>
+        <div class="card-body">
+          <h2 id="title-mc" class="channel-name">ShaosMC</h2>
+          <p class="subscribers"><span class="youtube-mark" aria-hidden="true"><svg viewBox="0 0 28 20"><rect x="0" y="0" width="28" height="20" rx="6" fill="currentColor"/><path d="M11.5 5.3 19.2 10l-7.7 4.7z" fill="#fff"/></svg></span><strong>9,2 millones</strong> <span>de suscriptores</span></p>
+          <span class="separator" aria-hidden="true"></span>
+          <p class="channel-description">Contenido internacional</p>
+          <button type="button" class="contact-btn" data-contact="shaosmc" aria-label="Ver contacto de ShaosMC">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><rect x="2.6" y="5.2" width="18.8" height="13.8" rx="2.3" stroke="currentColor" stroke-width="1.8"/><path d="m3.6 7 8.4 6 8.4-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            CONTACTO
+            <svg class="button-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 12h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </article>
 
+      <!-- 3: ShaosXD -->
+      <article class="channel-card channel-card--xd" aria-labelledby="title-xd">
+        <div class="card-pixels" aria-hidden="true"></div>
+        <div class="avatar-box">
+          <img src="assets/shaosxd.png" alt="Logo original de ShaosXD" width="447" height="447">
+        </div>
+        <div class="card-body">
+          <h2 id="title-xd" class="channel-name">ShaosXD</h2>
+          <p class="subscribers"><span class="youtube-mark" aria-hidden="true"><svg viewBox="0 0 28 20"><rect x="0" y="0" width="28" height="20" rx="6" fill="currentColor"/><path d="M11.5 5.3 19.2 10l-7.7 4.7z" fill="#fff"/></svg></span><strong>1,3 millones</strong> <span>de suscriptores</span></p>
+          <span class="separator" aria-hidden="true"></span>
+          <p class="channel-description">Contenido con acompañante</p>
+          <button type="button" class="contact-btn" data-contact="shaosxd" aria-label="Ver contacto de ShaosXD">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><rect x="2.6" y="5.2" width="18.8" height="13.8" rx="2.3" stroke="currentColor" stroke-width="1.8"/><path d="m3.6 7 8.4 6 8.4-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            CONTACTO
+            <svg class="button-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 12h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </article>
     </div>
+  </main>
 
-</section>
-            <!-- Después pondremos tu skin -->
-
-
-    <!-- ESTADÍSTICAS -->
-
-    <section id="stats" class="stats-section">
-
-        <div class="section-title">
-
-            <span>
-                ESTADÍSTICAS
-            </span>
-
-            <h2>
-                Números que hablan por sí solos
-            </h2>
-
-        </div>
-
-        <div class="stats-grid">
-
-            <div class="stat-card">
-
-                <h3 class="counter" data-target="1290000">
-                    0
-                </h3>
-
-                <p>
-                    Suscriptores
-                </p>
-
-            </div>
-
-            <div class="stat-card">
-
-                <h3 class="counter" data-target="468000000">
-                    0
-                </h3>
-
-                <p>
-                    Vistas destacadas
-                </p>
-
-            </div>
-
-            <div class="stat-card">
-
-                <h3 class="counter" data-target="38000000">
-                    0
-                </h3>
-
-                <p>
-                    Short más visto
-                </p>
-
-            </div>
-
-            <div class="stat-card">
-
-                <h3 class="counter" data-target="12">
-                    0
-                </h3>
-
-                <p>
-                    Shorts +9M
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-<section class="viral-section">
-
-    <div class="section-title">
-        <span>VIDEOS VIRALES</span>
-        <h2>Mis Shorts Mas Vistos</h2>
+  <!-- Mensaje temporal: se usa hasta definir las 3 rutas de contacto. -->
+  <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <div class="dialog-content">
+      <button type="button" class="dialog-close" id="dialog-close" aria-label="Cerrar">&times;</button>
+      <span class="dialog-icon" aria-hidden="true">✉</span>
+      <h2 id="dialog-title">Contacto</h2>
+      <p id="dialog-description">Próximamente vas a poder contactar a este canal desde su propia página.</p>
+      <button type="button" class="dialog-back" id="dialog-back">Volver a los canales</button>
     </div>
+  </dialog>
 
-    <div class="viral-track">
-
-        <a href="https://youtube.com/shorts/YnmJEBpt04c" target="_blank" class="viral-card">
-            <img src="assets/miniaturas/viral38.jpg" alt="38M">
-            <div class="viral-overlay">
-                <h3>38M</h3>
-                <p>Cuando no sabes perder</p>
-            </div>
-        </a>
-
-        <a href="https://youtube.com/shorts/gHYsBYOtIoI" target="_blank" class="viral-card">
-            <img src="assets/miniaturas/viral32.jpg" alt="32M">
-            <div class="viral-overlay">
-                <h3>32M</h3>
-                <p>Se dio cuenta</p>
-            </div>
-        </a>
-
-        <a href="https://youtube.com/shorts/Nro5iGY2tiY" target="_blank" class="viral-card">
-            <img src="assets/miniaturas/viral21.jpg" alt="21M">
-            <div class="viral-overlay">
-                <h3>21M</h3>
-                <p>Todo era más hermoso</p>
-            </div>
-        </a>
-
-        <a href="https://youtube.com/shorts/M671mGnR1WM" target="_blank" class="viral-card">
-            <img src="assets/miniaturas/viral18.jpg" alt="18M">
-            <div class="viral-overlay">
-                <h3>18M</h3>
-                <p>Cada vez es más difícil</p>
-            </div>
-        </a>
-
-        <a href="https://youtube.com/shorts/6OI7lms_jU8" target="_blank" class="viral-card">
-            <img src="assets/miniaturas/viral16.jpg" alt="16M">
-            <div class="viral-overlay">
-                <h3>16M</h3>
-                <p>No salió bien</p>
-            </div>
-        </a>
-
-        <a href="https://youtube.com/shorts/KnD5jkjR4mU" target="_blank" class="viral-card">
-            <img src="assets/miniaturas/viral15.jpg" alt="15.5M">
-            <div class="viral-overlay">
-                <h3>15.5M</h3>
-                <p>Arruinó el Survival</p>
-            </div>
-        </a>
-
-        <a href="https://youtube.com/shorts/IMWuutMbQks" target="_blank" class="viral-card">
-            <img src="assets/miniaturas/viral15.5.jpg" alt="15M">
-            <div class="viral-overlay">
-                <h3>15M</h3>
-                <p>No vuelve al Nether</p>
-            </div>
-        </a>
-
-        <!-- Duplicados para el scroll infinito -->
-
-        <a href="https://youtube.com/shorts/YnmJEBpt04c" target="_blank" class="viral-card">
-            <img src="assets/miniaturas/viral38.jpg" alt="38M">
-            <div class="viral-overlay">
-                <h3>38M</h3>
-                <p>Cuando no sabes perder</p>
-            </div>
-        </a>
-
-        <a href="https://youtube.com/shorts/gHYsBYOtIoI" target="_blank" class="viral-card">
-            <img src="assets/miniaturas/viral32.jpg" alt="32M">
-            <div class="viral-overlay">
-                <h3>32M</h3>
-                <p>Se dio cuenta</p>
-            </div>
-        </a>
-
-    </div>
-
-</section>
-
-    <!-- IMPACTO -->
-
-    <section id="impact" class="impact-section">
-
-        <div class="section-title">
-
-            <span>
-                IMPACTO
-            </span>
-
-            <h2>
-                ¿Por qué trabajar conmigo?
-            </h2>
-
-        </div>
-
-        <div class="impact-grid">
-
-            <div class="impact-card">
-
-                <div class="impact-icon">
-                    🚀
-                </div>
-
-                <h3>
-                    Alcance Masivo
-                </h3>
-
-                <p>
-                    Millones de visualizaciones cada mes.
-                </p>
-
-            </div>
-
-            <div class="impact-card">
-
-                <div class="impact-icon">
-                    🎮
-                </div>
-
-                <h3>
-                    Minecraft
-                </h3>
-
-                <p>
-                    Audiencia especializada y fiel.
-                </p>
-
-            </div>
-
-            <div class="impact-card">
-
-                <div class="impact-icon">
-                    📱
-                </div>
-
-                <h3>
-                    Shorts Virales
-                </h3>
-
-                <p>
-                    Formato de alto rendimiento.
-                </p>
-
-            </div>
-
-            <div class="impact-card">
-
-                <div class="impact-icon">
-                    🌎
-                </div>
-
-                <h3>
-                    Audiencia Internacional
-                </h3>
-
-                <p>
-                    Alcance global.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- SOBRE MI -->
-
-<section id="about" class="about-section">
-
-    <div class="about-card">
-
-        <span class="about-tag">
-            SOBRE MÍ
-        </span>
-
-        <h2>
-            Creando contenido para millones de personas
-        </h2>
-
-        <p>
-            Soy Shaos, creador de contenido especializado en Minecraft.
-            Durante los últimos años he construido una comunidad de más de
-            1.29 millones de suscriptores creando contenido de entretenimiento,
-            desafíos y Shorts virales.
-        </p>
-
-        <p>
-            Trabajo con marcas, servidores y proyectos relacionados con gaming
-            que buscan llegar a una audiencia joven y altamente comprometida.
-        </p>
-
-    </div>
-
-</section>
-
-    <!-- CONTACTO -->
-
-<section class="seccion-contacto">
-  
-<section id="contact" class="contact-section">
-
-    <div class="contact-wrapper">
-
-        <div class="contact-header">
-
-            <span class="contact-tag">
-                CONTACTO
-            </span>
-
-            <h2>
-                ¿Tenés una propuesta?
-            </h2>
-
-            <p>
-                Si representás una marca, servidor, empresa o proyecto,
-                completá el formulario y me pondré en contacto lo antes posible.
-            </p>
-
-        </div>
-
-        <form action="https://formsubmit.co/shaoscontact@gmail.com"
-              method="POST"
-              class="contact-form">
-
-            <input type="hidden" name="_subject" value="Nueva propuesta desde shaos.site">
-
-            <input type="hidden" name="_captcha" value="false">
-
-            <input type="hidden"
-                   name="_next"
-                   value="https://shaos.site">
-
-            <div class="input-group">
-                <label>Empresa o proyecto</label>
-                <input
-                    type="text"
-                    name="Empresa"
-                    placeholder="Nombre de la empresa"
-                    required>
-            </div>
-
-            <div class="input-group">
-                <label>Email de contacto</label>
-                <input
-                    type="email"
-                    name="Email"
-                    placeholder="ejemplo@empresa.com"
-                    required>
-            </div>
-
-            <div class="input-group">
-                <label>Mensaje</label>
-                <textarea
-                    name="Mensaje"
-                    rows="6"
-                    placeholder="Contame sobre tu propuesta..."
-                    required></textarea>
-            </div>
-
-            <button type="submit" class="contact-submit">
-                Enviar propuesta
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-    <!-- FOOTER -->
-
-    <footer>
-
-<div class="logo">
-
-    <img src="assets/logo.png" alt="Shaos Logo">
-
-    <span>SHAOS</span>
-
-</div>
-
-        <div class="footer-links">
-
-            <a href="https://www.youtube.com/@ShaosXD" target="_blank">
-                YouTube
-            </a>
-
-            <a href="https://www.instagram.com/shaosxd/" target="_blank">
-                Instagram
-            </a>
-
-            <a href="https://www.tiktok.com/@shaosxd" target="_blank">
-                TikTok
-            </a>
-
-        </div>
-
-        <p>
-            © 2026 Shaos.site
-        </p>
-
-    </footer>
-
-    <script src="script.js"></script>
-
+  <script src="script.js" defer></script>
 </body>
-
 </html>

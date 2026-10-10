@@ -1,216 +1,49 @@
-console.log('Shaos.site listo');
-/* =========================
-   CONTADORES
-========================= */
+/*
+ * Cuando estén listas las páginas de contacto, reemplazar "" por cada ruta.
+ * Ejemplo: shaosmc: "contacto-shaosmc.html"
+ * También admite direcciones completas HTTPS o enlaces mailto:.
+ * Las tres opciones permanecen independientes.
+ */
+const CONTACT_DESTINATIONS = {
+  shaoskrr: "",
+  shaosmc: "",
+  shaosxd: ""
+};
 
-const counters = document.querySelectorAll(".counter");
+const CHANNEL_NAMES = {
+  shaoskrr: "Shaoskrr",
+  shaosmc: "ShaosMC",
+  shaosxd: "ShaosXD"
+};
 
-const counterObserver = new IntersectionObserver(
-(entries) => {
+const dialog = document.getElementById("contact-dialog");
+const dialogTitle = document.getElementById("dialog-title");
+const dialogDescription = document.getElementById("dialog-description");
+const closeButton = document.getElementById("dialog-close");
+const backButton = document.getElementById("dialog-back");
 
-entries.forEach(entry => {
+function openContact(channel) {
+  if (!Object.hasOwn(CHANNEL_NAMES, channel)) return;
 
-if (!entry.isIntersecting) return;
+  const destination = CONTACT_DESTINATIONS[channel].trim();
+  if (destination) {
+    // Evitar esquemas peligrosos al conectar nuevas direcciones.
+    const valid = destination.startsWith("https://") || destination.startsWith("mailto:") || /^[a-z0-9][a-z0-9/_.-]*\.html(?:[?#].*)?$/i.test(destination);
+    if (valid) window.location.href = destination;
+    return;
+  }
 
-const counter = entry.target;
-
-const target = Number(counter.dataset.target);
-
-let current = 0;
-
-const duration = 2500;
-
-const increment = target / (duration / 16);
-
-function updateCounter() {
-
-current += increment;
-
-if (current < target) {
-
-if(target >= 1000000){
-
-counter.innerText =
-(Math.floor(current) / 1000000).toFixed(2) + "M+";
-
-}
-else{
-
-counter.innerText =
-Math.floor(current).toLocaleString();
-
+  dialogTitle.textContent = `Contacto · ${CHANNEL_NAMES[channel]}`;
+  dialogDescription.textContent = `La página de contacto de ${CHANNEL_NAMES[channel]} todavía se está preparando. Cada canal tendrá su propio contacto.`;
+  dialog.showModal();
 }
 
-requestAnimationFrame(updateCounter);
-
-}
-else{
-
-if(target === 1290000){
-
-counter.innerText = "1.29M+";
-
-}
-else if(target === 468000000){
-    counter.innerText = "468M+";
-}
-else if(target === 38000000){
-
-counter.innerText = "38M+";
-
-}
-else{
-
-counter.innerText = target;
-
-}
-
-}
-
-}
-
-updateCounter();
-
-counterObserver.unobserve(counter);
-
+document.querySelectorAll("[data-contact]").forEach(button => {
+  button.addEventListener("click", () => openContact(button.dataset.contact));
 });
 
-},
-{
-threshold:0.4
-}
-);
-
-counters.forEach(counter=>{
-counterObserver.observe(counter);
-});
-
-/* =========================
-   REVEAL ANIMATION
-========================= */
-
-const revealElements = document.querySelectorAll(
-".stat-card, .impact-card, .timeline-item, .contact-card, .about-section"
-);
-
-const revealObserver = new IntersectionObserver(
-
-(entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-},
-{
-threshold:0.15
-}
-);
-
-revealElements.forEach(el=>{
-
-el.classList.add("hidden");
-
-revealObserver.observe(el);
-
-});
-
-/* =========================
-   NAVBAR SCROLL EFFECT
-========================= */
-
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY > 80){
-
-navbar.style.background =
-"rgba(5,6,10,.85)";
-
-navbar.style.boxShadow =
-"0 0 25px rgba(0,0,0,.4)";
-
-}
-else{
-
-navbar.style.background =
-"rgba(5,6,10,.45)";
-
-navbar.style.boxShadow =
-"none";
-
-}
-
-});
-
-/* =========================
-   PARTICULAS
-========================= */
-
-const particles =
-document.querySelector(".particles");
-
-for(let i = 0; i < 35; i++){
-
-const particle =
-document.createElement("div");
-
-particle.classList.add("particle");
-
-particle.style.left =
-Math.random() * 100 + "%";
-
-particle.style.top =
-Math.random() * 100 + "%";
-
-particle.style.animationDuration =
-8 + Math.random() * 10 + "s";
-
-particle.style.animationDelay =
-Math.random() * 5 + "s";
-
-particles.appendChild(particle);
-
-}
-
-/* =========================
-   MOUSE GLOW
-========================= */
-
-const glow =
-document.createElement("div");
-
-glow.classList.add("mouse-glow");
-
-document.body.appendChild(glow);
-
-document.addEventListener("mousemove",(e)=>{
-
-glow.style.left =
-e.clientX + "px";
-
-glow.style.top =
-e.clientY + "px";
-
-});
-
-/* =========================
-   HERO POP
-========================= */
-
-window.addEventListener("load",()=>{
-
-document.querySelector(".hero-content")
-.classList.add("hero-visible");
-
-document.querySelector(".hero-image")
-.classList.add("hero-visible");
-
+closeButton.addEventListener("click", () => dialog.close());
+backButton.addEventListener("click", () => dialog.close());
+dialog.addEventListener("click", e => {
+  if (e.target === dialog) dialog.close();
 });
