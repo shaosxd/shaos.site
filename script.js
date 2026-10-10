@@ -3,16 +3,16 @@
  * Actualización: cielo nocturno discreto, luna cuadrada estilo Minecraft
  * y partículas pequeñas que flotan lentamente.
  *
- * Reemplazá únicamente script.js en la raíz del repositorio.
- * No modifica el diseño de las tarjetas ni necesita nuevas imágenes.
+ * Página principal: al tocar CONTACTO se abre la página individual de cada canal.
+ * Mantiene el fondo nocturno, luna y partículas originales.
  */
 
 // Cuando estén listas las páginas de contacto, completar cada ruta aquí.
 // Ejemplos: "contacto-shaoskrr.html" o "mailto:correo@ejemplo.com".
 const CONTACT_DESTINATIONS = {
-  shaoskrr: "",
-  shaosmc: "",
-  shaosxd: ""
+  shaoskrr: "contacto-shaoskrr.html",
+  shaosmc: "contacto-shaosmc.html",
+  shaosxd: "contacto-shaosxd.html"
 };
 
 const CHANNEL_NAMES = {
