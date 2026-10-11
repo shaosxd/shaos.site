@@ -80,3 +80,114 @@ section{scroll-margin-top:30px}
 @media(max-width:600px){.channel-site{padding:10px 16px 24px}.channel-nav{min-height:65px}.brand{font-size:16px}.brand-caption{display:none}.back-link{font-size:12px;padding:9px 12px}.hero-section{padding:34px 0 37px}.identity-row{gap:12px;margin:23px 0 14px}.profile-logo{width:103px;height:103px}.identity-row h1{font-size:42px}.tag{font-size:10px;padding:7px 9px}.hero-line{font-size:25px;margin:14px 0}.hero-description{font-size:13px}.hero-actions{gap:9px}.primary-link,.secondary-link{padding:12px 13px;font-size:12px}.reach-number{font-size:58px}.reach-card{padding:25px}.section-heading{align-items:start;flex-direction:column;gap:9px;margin-bottom:16px}.section-caption{text-align:left}.audience-section,.videos-section,.collab-section{padding:22px 0 26px}.glass-panel{padding:20px}.video-grid{grid-template-columns:1fr;gap:14px}.video-card{display:grid;grid-template-columns:42% 58%;min-height:142px}.video-image{height:100%;min-height:142px}.video-info{padding:14px;display:flex;flex-direction:column;align-items:start;justify-content:center;gap:16px}.video-info>span:first-child{white-space:normal;font-size:14px}.video-action{font-size:12px}.collab-grid{grid-template-columns:1fr;gap:10px}.collab-item{padding:17px 18px}.collab-item h3{margin:9px 0 6px}.contact-section-new{margin-top:27px;padding:27px 20px;gap:27px}.site-footer{margin-top:39px}.night-moon{opacity:.3!important}}
 @media(max-width:370px){.profile-logo{width:88px;height:88px}.identity-row h1{font-size:36px}.back-link span{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* ==========================================================
+   SHAOS.SITE · ANIMACIONES PREMIUM / VERSIÓN 1.1
+   Solo afecta a las tres páginas comerciales. No cambia datos,
+   links ni formularios. Si el sistema reduce movimiento, se desactiva.
+   ========================================================== */
+
+/* Entrada escalonada: cada elemento aparece una vez al abrir la página. */
+@keyframes shaos-enter-down {
+  from { opacity:0; transform:translate3d(0,-15px,0); }
+  to { opacity:1; transform:translate3d(0,0,0); }
+}
+@keyframes shaos-enter-up {
+  from { opacity:0; transform:translate3d(0,22px,0); }
+  to { opacity:1; transform:translate3d(0,0,0); }
+}
+@keyframes shaos-enter-card {
+  from { opacity:0; transform:translate3d(0,27px,0) scale(.975); }
+  to { opacity:1; transform:translate3d(0,0,0) scale(1); }
+}
+@keyframes shaos-hero-shine {
+  from { transform:translateX(-170%) skewX(-16deg); }
+  to { transform:translateX(480%) skewX(-16deg); }
+}
+@keyframes shaos-bar-fill {
+  from { transform:scaleX(.035); }
+  to { transform:scaleX(1); }
+}
+@keyframes shaos-soft-float {
+  0%,100% { transform:translateY(0); }
+  50% { transform:translateY(-4px); }
+}
+
+/* Las animaciones solo se activan cuando el navegador admite JS y movimiento. */
+body.channel-page.motion-enabled .channel-nav {
+  animation:shaos-enter-down .7s cubic-bezier(.2,.75,.25,1) .02s both;
+}
+body.channel-page.motion-enabled .hero-copy .overline {
+  animation:shaos-enter-up .7s cubic-bezier(.2,.75,.25,1) .10s both;
+}
+body.channel-page.motion-enabled .hero-copy .identity-row {
+  animation:shaos-enter-up .75s cubic-bezier(.2,.75,.25,1) .22s both;
+}
+body.channel-page.motion-enabled .hero-copy .hero-line {
+  animation:shaos-enter-up .75s cubic-bezier(.2,.75,.25,1) .33s both;
+}
+body.channel-page.motion-enabled .hero-copy .hero-description {
+  animation:shaos-enter-up .75s cubic-bezier(.2,.75,.25,1) .43s both;
+}
+body.channel-page.motion-enabled .hero-copy .hero-actions {
+  animation:shaos-enter-up .75s cubic-bezier(.2,.75,.25,1) .54s both;
+}
+body.channel-page.motion-enabled .reach-card {
+  animation:shaos-enter-card .95s cubic-bezier(.2,.75,.25,1) .37s both;
+}
+/* Un solo destello breve al ingresar, nunca un brillo que distraiga continuamente. */
+body.channel-page.motion-enabled .reach-card::after {
+  content:"";
+  position:absolute;
+  top:-14%;
+  bottom:-14%;
+  left:0;
+  width:30%;
+  z-index:3;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.115),transparent);
+  animation:shaos-hero-shine 1.5s ease-out .90s both;
+}
+body.channel-page.motion-enabled .profile-logo {
+  animation:shaos-soft-float 6s ease-in-out 2s infinite;
+}
+/* Aparición de bloques solo al llegar a ellos: sin JavaScript quedan siempre visibles. */
+body.channel-page.motion-enabled .motion-reveal {
+  opacity:0;
+  transform:translate3d(0,25px,0) scale(.988);
+  transition:opacity .72s cubic-bezier(.22,.7,.25,1),
+             transform .72s cubic-bezier(.22,.7,.25,1);
+  transition-delay:var(--reveal-delay,0ms);
+}
+body.channel-page.motion-enabled .motion-reveal.motion-visible {
+  opacity:1;
+  transform:translate3d(0,0,0) scale(1);
+}
+/* Barras estadísticas se rellenan una vez, sin cambiar sus porcentajes. */
+body.channel-page.motion-enabled .bar-track>span {
+  transform-origin:left center;
+}
+body.channel-page.motion-enabled .glass-panel.bars-visible .bar-track>span {
+  animation:shaos-bar-fill 1.05s cubic-bezier(.18,.8,.22,1) .15s both;
+}
+/* Feedback visual fino, sin modificar el layout. */
+body.channel-page .primary-link:hover,
+body.channel-page .submit-btn:hover {
+  box-shadow:0 10px 32px rgba(var(--accent-rgb),.27);
+}
+body.channel-page .primary-link:active,
+body.channel-page .secondary-link:active,
+body.channel-page .submit-btn:active {
+  transform:translateY(0) scale(.985);
+}
+body.channel-page .video-card:focus-visible,
+body.channel-page .collab-item:hover {
+  border-color:rgba(var(--accent-rgb),.38);
+  box-shadow:0 10px 35px rgba(var(--accent-rgb),.065);
+}
+/* Accesibilidad: nada de entradas, destellos o elementos ocultos. */
+@media (prefers-reduced-motion:reduce) {
+  body.channel-page.motion-enabled .motion-reveal {opacity:1!important;transform:none!important;transition:none!important;}
+  body.channel-page.motion-enabled .reach-card::after{display:none!important;}
+  body.channel-page.motion-enabled .bar-track>span{transform:none!important;}
+}
